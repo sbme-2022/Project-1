@@ -3,7 +3,7 @@
 require 'httparty'
 
 task get_rates: :environment do
-  response = HTTParty.get('https://api.apilayer.com/exchangerates_data/latest?apikey=vV1XjZwlnpEbzI3tIA5Bw2eqrg7631QJ')
+  response = HTTParty.get("https://api.apilayer.com/exchangerates_data/latest?apikey=#{ENV['api_key']}")
   rates = response['rates']
 
   rates.each do |name, value|
