@@ -7,6 +7,6 @@ task get_rates: :environment do
   rates = response['rates']
 
   rates.each do |name, value|
-    CurrencyRate.create!(name: name, value: value)
+    CurrencyRate.create!(currencyName: name, currencyValue: value)
   end
 end
